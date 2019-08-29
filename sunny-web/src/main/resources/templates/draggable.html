@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Entire bundle -->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>-->
+<!--    &lt;!&ndash; legacy bundle for older browsers (IE11) &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.legacy.js"></script>-->
+<!--    &lt;!&ndash; Draggable only &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.js"></script>-->
+<!--    &lt;!&ndash; Sortable only &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/sortable.js"></script>-->
+<!--    &lt;!&ndash; Droppable only &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/droppable.js"></script>-->
+<!--    &lt;!&ndash; Swappable only &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/swappable.js"></script>-->
+<!--    &lt;!&ndash; Plugins only &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/plugins.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta/lib/draggable.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+</ul>
+
+
+<script>
+    new Draggable.Draggable(document.querySelectorAll('ul'), {
+        draggable: 'li'
+    })
+        .on('drag:start', () => console.log('drag:start'))
+        .on('drag:move',  () => console.log('drag:move'))
+        .on('drag:stop',  () => console.log('drag:stop'));
+
+</script>
+</body>
+
+</html>

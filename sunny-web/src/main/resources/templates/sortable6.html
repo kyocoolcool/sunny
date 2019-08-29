@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>sortable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../static/hh/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../static/hh/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../static/hh/css/main.css">
+    <!--===============================================================================================-->
+    <!--    &lt;!&ndash; AngularJS &ndash;&gt;-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+    <!--    &lt;!&ndash; Sortable.js &ndash;&gt;-->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#listA div").addClass("listA");
+        });
+        $(function () {
+            $("#listB div").addClass("listB");
+        });
+        $(function () {
+            $("#list1 div").addClass("list1");
+        });
+    </script>
+    <style>
+        .list1 {
+            width: 200px;
+            height: 50px;
+            border-style: dashed;
+        }
+
+        .list2 {
+            width: 200px;
+            height: 50px;
+            border-style: dashed;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100 ver1 m-b-110">
+                <table data-vertable="ver1">
+                    <thead>
+                    <tr class="row100 head">
+                        <th class="column100 column1" data-column="column1"></th>
+                        <th class="column100 column2" data-column="column2">Sunday</th>
+                        <th class="column100 column3" data-column="column3">Monday</th>
+                        <th class="column100 column4" data-column="column4">Tuesday</th>
+                        <th class="column100 column5" data-column="column5">Wednesday</th>
+                        <th class="column100 column6" data-column="column6">Thursday</th>
+                        <th class="column100 column7" data-column="column7">Friday</th>
+                        <th class="column100 column8" data-column="column8">Saturday</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table1">
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Jane Medina</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Billy Mitchell</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">2:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Beverly Reid</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Tiffany Wade</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Sean Adams</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Rachel Simpson</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">2:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listA">
+                        <td class="column100 column1" data-column="column1">Mark Salazar</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="table100 ver6 m-b-110">
+                <table data-vertable="ver6">
+                    <thead>
+                    <tr class="row100 head">
+                        <th class="column100 column1" data-column="column1"></th>
+                        <th class="column100 column2" data-column="column2">Sunday</th>
+                        <th class="column100 column3" data-column="column3">Monday</th>
+                        <th class="column100 column4" data-column="column4">Tuesday</th>
+                        <th class="column100 column5" data-column="column5">Wednesday</th>
+                        <th class="column100 column6" data-column="column6">Thursday</th>
+                        <th class="column100 column7" data-column="column7">Friday</th>
+                        <th class="column100 column8" data-column="column8">Saturday</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table2">
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Jane Medina</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Billy Mitchell</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">2:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Beverly Reid</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Tiffany Wade</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Sean Adams</td>
+                        <td class="column100 column2" data-column="column2">--</td>
+                        <td class="column100 column3" data-column="column3">5:00 PM</td>
+                        <td class="column100 column4" data-column="column4">5:00 PM</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">9:00 AM</td>
+                        <td class="column100 column7" data-column="column7">--</td>
+                        <td class="column100 column8" data-column="column8">--</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Rachel Simpson</td>
+                        <td class="column100 column2" data-column="column2">9:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">--</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">2:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+
+                    <tr class="listB">
+                        <td class="column100 column1" data-column="column1">Mark Salazar</td>
+                        <td class="column100 column2" data-column="column2">8:00 AM</td>
+                        <td class="column100 column3" data-column="column3">--</td>
+                        <td class="column100 column4" data-column="column4">--</td>
+                        <td class="column100 column5" data-column="column5">8:00 AM</td>
+                        <td class="column100 column6" data-column="column6">--</td>
+                        <td class="column100 column7" data-column="column7">5:00 PM</td>
+                        <td class="column100 column8" data-column="column8">8:00 AM</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="element1">
+    <h4 id="title1">List 1</h4>
+    <div id="list1" class="list1">
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="../static/hh/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../static/hh/vendor/bootstrap/js/popper.js"></script>
+<script src="../static/hh/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../static/hh/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="../static/hh/js/main.js"></script>
+<!--<script src="js/sortable/test.js"></script>-->
+<script>
+    let count = 1;
+
+    let options = {
+        group: {
+            name: 'list',
+            /*四種參數:to,from,item,event*/
+            put: function (to, from, item, evt, a) {
+                let itemClass=item.className.substring(0,5)
+                let temp = to.el.children;
+                var arr = [].slice.call(temp);
+                if (to.el.children.length != 0) {
+                    if (arr[0].className == itemClass) {
+                        return false;
+                    }
+                    // console.log({'arr': arr[0].className});
+                }
+
+                // console.log({'aa0': aa[0]});
+                // console.log({'aa1': aa[1]});
+                // console.log({'to': to.el.children[1]});
+                // console.log(to.el.children[0]);
+                // console.log(to.el.children[1]);
+                return to.el.children.length < 2;
+                // return true;
+            }
+        },
+        // onMove: onMove,
+        easing: "cubic-bezier(.16,.84,.44,1)",
+        animation: 100,
+        emptyInsertThreshold: 5, // this is the default
+        // onAdd: function (evt) {
+        //
+        //     console.log("6666666666666666666")
+        // }
+    };
+
+    let events = [
+        'onChoose',
+        'onStart',
+        'onEnd',
+        'onAdd',
+        'onUpdate',
+        'onSort',
+        'onRemove',
+        'onChange',
+        'onUnchoose'
+    ].forEach(function (name) {
+        options[name] = function (evt) {
+            if (name == 'onAdd') {
+                if (evt.to.children.length > 1) {
+                    if (count == evt.to.className.slice(4)) {
+                        let tempCount = count;
+                        count++;
+                        var tempElemet = document.createElement("div");
+                        tempElemet.setAttribute("id", "element" + count);
+                        let tempText = "<h4 id='title" + count + "'>List" + count + "</h4><div id='list" + count + "' class='list" + count + "'></div>";
+                        tempElemet.innerHTML = tempText;
+                        document.getElementById('element' + (count - 1)).before(tempElemet);
+                        // let obja:object =eval('({' + 'list'+tempCount + '})');
+                        // console.log({'list2': list2});
+                        // Sortable.create(list2, options);
+                        var myElement = document.getElementById('list' + count);
+                        console.log({'myElement': myElement});
+                        Sortable.create(myElement, options);
+                    }
+                }
+            }
+            console.log({
+                'event': name,
+                'this': this,
+                'item': evt.item,
+                'from': evt.from,
+                'to': evt.to,
+                'oldIndex': evt.oldIndex,
+                'newIndex': evt.newIndex
+            });
+        };
+    });
+</script>
+<script>
+    Sortable.create(table1, {
+        group: {
+            name: 'listA',
+                // 可以放方法限制目的端只能多少數量
+                put: ['listA', 'listB']
+        },
+    });
+
+    Sortable.create(table2, {
+        group: {
+            name: 'listB',
+            // 可以放方法限制目的端只能多少數量
+            put: ['listA', 'listB']
+        },
+    });
+
+    Sortable.create(list1, options);
+</script>
+</body>
+</html>

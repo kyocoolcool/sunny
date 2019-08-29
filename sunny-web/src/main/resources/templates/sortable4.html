@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ortable: `put: []` demo</title>
+
+
+    <!-- AngularJS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+    <!-- Sortable.js -->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: #eee;
+        margin: 1px;
+        padding: 5px 10px;
+    }
+
+    .sortable-ghost {
+        opacity: .6;
+    }
+</style>
+</head>
+<body>
+<ul id="foo">
+    <li>foo 1</li>
+    <li>foo 2</li>
+    <li>foo 3</li>
+</ul>
+
+<ul id="bar">
+    <li>bar 1</li>
+    <li>bar 2</li>
+    <li>bar 3</li>
+</ul>
+
+<script>
+    // Open DevTools > Console
+
+    var options = {
+        group: 'share',
+        animation: 100
+    };
+
+    events = [
+        'onChoose',
+        'onStart',
+        'onEnd',
+        'onAdd',
+        'onUpdate',
+        'onSort',
+        'onRemove',
+        'onChange',
+        'onUnchoose'
+    ].forEach(function (name) {
+        options[name] = function (evt) {
+            if (name == 'onEnd') {
+                alert('onEnd');
+                evt.item.remove();
+
+            }
+            console.log({
+                'event': name,
+                'this': this,
+                'item': evt.item,
+                'from': evt.from,
+                'to': evt.to,
+                'oldIndex': evt.oldIndex,
+                'newIndex': evt.newIndex
+            });
+        };
+    });
+
+    Sortable.create(foo, options);
+    Sortable.create(bar, options);
+
+
+</script>
+
+</body>
+</html>

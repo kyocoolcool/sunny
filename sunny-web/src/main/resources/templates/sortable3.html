@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ortable: `put: []` demo</title>
+
+
+    <!-- AngularJS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+    <!-- Sortable.js -->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: #eee;
+        margin: 1px;
+        padding: 5px 10px;
+    }
+
+    .sortable-ghost {
+        opacity: .6;
+    }
+</style>
+</head>
+<body>
+<ul id="el">
+    <li data-id="1">order</li>
+    <li data-id="2">save</li>
+    <li data-id="3">restore</li>
+</ul>
+<script>
+    Sortable.create(el, {
+        group: "localStorage-example",
+        store: {
+            /**
+             * Get the order of elements. Called once during initialization.
+             * @param   {Sortable}  sortable
+             * @returns {Array}
+             */
+            get: function (sortable) {
+                var order = localStorage.getItem(sortable.options.group.name);
+                return order ? order.split('|') : [];
+            },
+
+            /**
+             * Save the order of elements. Called onEnd (when the item is dropped).
+             * @param {Sortable}  sortable
+             */
+            set: function (sortable) {
+                var order = sortable.toArray();
+                localStorage.setItem(sortable.options.group.name, order.join('|'));
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
