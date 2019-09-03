@@ -1,13 +1,11 @@
 package kyocoolcool.controller;
 
-import kyocoolcool.bean.Passenger;
-import kyocoolcool.bean.Person;
+import kyocoolcool.model.Passenger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @ClassName GetController
@@ -65,6 +63,18 @@ public class GetController {
         passengerList.add(passenger);
         passengerList.add(passenger2);
         model.addAttribute("passengerList", passengerList);
+
+        ArrayList<Passenger> passengerList2 = new ArrayList<>();
+        Passenger passenger3 = new Passenger();
+        passenger3.setName("Wang");
+        passenger3.setAge(50);
+        Passenger passenger4 = new Passenger();
+        passenger4.setName("Annie");
+        passenger4.setAge(20);
+        passengerList2.add(passenger3);
+        passengerList2.add(passenger4);
+        model.addAttribute("passengerList2", passengerList2);
+
         model.addAttribute("hello", "hello");
         return "sortable7";
     }

@@ -1,9 +1,8 @@
 package kyocoolcool;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Collections;
 
 /**
  * @ClassName SpringBootSunnyWebApplication
@@ -12,7 +11,7 @@ import java.util.Collections;
  * @Date 2019-08-19 16:39
  * @Version 1.0
  **/
-
+//@MapperScan("kyocoolcool.dao.mapper")
 @SpringBootApplication
 public class SpringBootSunnyWebApplication {
     public static void main(String[] args) {
