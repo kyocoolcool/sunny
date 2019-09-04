@@ -1084,7 +1084,7 @@
         } else if (pull && value === 'clone') {
           return value;
         } else if (typeof value === 'function') {
-          console.log("wowowowowowwowowowo");
+          /**會執行此段程式碼把function帶進參數*/
           return toFn(value(to, from, dragEl, evt), pull)(to, from, dragEl, evt);
         } else {
           var otherGroup = (pull ? to : from).options.group.name;

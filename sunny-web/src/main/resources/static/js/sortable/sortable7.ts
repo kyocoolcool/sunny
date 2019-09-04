@@ -28,18 +28,16 @@ class Passenger {
     }
 }
 
-function hello() {
-
+function submmit() {
 
     /**創建陣列*/
     var arr = new Array();
 
-    console.log('countFirst:' + count);
     for (var j = 1; j <= count; j++) {
 
 
         let listTemp = '#list' + j;
-        console.log("listTemp"+listTemp);
+        console.log("listTemp" + listTemp);
 
 
         /**透過jquery Select取得元素*/
@@ -56,13 +54,10 @@ function hello() {
                 passenger.setAge(temp2);
                 arr.push(passenger);
                 /**將物件放入陣列中*/
-                // console.log(passenger.name);
-                // console.log(passenger.age);
-                // console.log(arr);
             }
         }
     }
-    let arrJson=JSON.stringify(arr)
+    let arrJson = JSON.stringify(arr)
     console.log(arrJson);
     /**陣列轉為JSON字串*/
     console.log('count:' + count);
@@ -71,8 +66,27 @@ function hello() {
         type: 'POST',
         url: '/sunny-web/passengerMapping',
         data: arrJson, // or JSON.stringify ({name: 'jonas'}),
-        success: function(data) { alert('data: ' + data); },
+        success: function (data) {
+            alert('data: ' + data);
+        },
         contentType: "application/json",
         dataType: 'json'
     });
+
+}
+/**移除元素*/
+function removeElement(element) {
+    console.log('我有執行');
+    let s = element.parent().attr('id').substring(5, 6);
+    let ss = '#list' + s;
+    let size = $(ss).children("tr").length;
+    console.log(size);
+    for (let i = 0; i < size; i++) {
+        if (($(ss).children("tr")[0].className) == 'listA') {
+            $('#table1').prepend($(ss).children("tr")[0]);
+        } else if (($(ss).children("tr")[0].className) == 'listB') {
+            $('#table2').prepend($(ss).children("tr")[0]);
+        }
+    }
+    element.parent().parent().remove();
 }

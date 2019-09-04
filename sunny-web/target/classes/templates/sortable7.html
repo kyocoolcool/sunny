@@ -13,7 +13,6 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" th:href="@{/aa/css/templatemo-style.css}">
     <!--    🍎==========================================================-->
-
     <!--    🍏來自Table HighLight==================================-->
     <link rel="icon" type="image/png" th:href="@{hh/images/icons/favicon.ico}"/>
     <link rel="stylesheet" type="text/css" th:href="@{hh/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
@@ -29,6 +28,9 @@
     <script th:src="@{/js/sortable/sortable.js}"></script>
     <!-- jQuery.js -->
     <script th:src="@{/js/sortable/jquery.min.js}"></script>
+    <!-- 來自fontawesome 圖標 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
 
@@ -47,20 +49,6 @@
                             <th class="column100 column1" data-column="column1">1</th>
                             <th class="column100 column2" data-column="column2">2</th>
                             <th class="column100 column3" data-column="column3">3</th>
-                            <!--                            <th class="column100 column4" data-column="column4">4</th>-->
-                            <!--                            <th class="column100 column5" data-column="column5">5</th>-->
-                            <!--                            <th class="column100 column6" data-column="column6">6</th>-->
-                            <!--                            <th class="column100 column7" data-column="column7">7</th>-->
-                            <!--                            <th class="column100 column8" data-column="column8">8</th>-->
-
-                            <!--                            <th class="column100 column1" data-column="column1"></th>-->
-                            <!--                            <th class="column100 column2" data-column="column2">Sunday</th>-->
-                            <!--                            <th class="column100 column3" data-column="column3">Monday</th>-->
-                            <!--                            <th class="column100 column4" data-column="column4">Tuesday</th>-->
-                            <!--                            <th class="column100 column5" data-column="column5">Wednesday</th>-->
-                            <!--                            <th class="column100 column6" data-column="column6">Thursday</th>-->
-                            <!--                            <th class="column100 column7" data-column="column7">Friday</th>-->
-                            <!--                            <th class="column100 column8" data-column="column8">Saturday</th>-->
                         </tr>
                         </thead>
                         <tbody id="table1">
@@ -86,11 +74,6 @@
                             <th class="column100 column1" data-column="column1"></th>
                             <th class="column100 column2" data-column="column2">Sunday</th>
                             <th class="column100 column3" data-column="column3">Monday</th>
-<!--                            <th class="column100 column4" data-column="column4">Tuesday</th>-->
-<!--                            <th class="column100 column5" data-column="column5">Wednesday</th>-->
-<!--                            <th class="column100 column6" data-column="column6">Thursday</th>-->
-<!--                            <th class="column100 column7" data-column="column7">Friday</th>-->
-<!--                            <th class="column100 column8" data-column="column8">Saturday</th>-->
                         </tr>
                         </thead>
                         <tbody id="table2">
@@ -110,17 +93,19 @@
         <div class="col-12 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
                 <h2 class="tm-block-title">Mapping Area</h2>
-                <div id="element1">
-                    <h4 id="title1">List 1</h4>
+                <div id="element1" class="container">
+                    <h4 id="title1">List 1
+                        <a th:onclick="'removeElement($(this));'">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </h4>
                     <div id="list1" class="list1">
                     </div>
                 </div>
             </div>
         </div>
         <!--🍎Mapping區塊-->
-        <!--        <span th:text="|Welcome to our application, ${hello} |"/>-->
-        <!--        <a th:href="@{/save(passengerName='chris')}" class="btn btn-danger btn-sm">Save</a>-->
-        <a th:onclick="'hello();'"  class="btn btn-danger btn-sm">Save</a>
+        <a th:onclick="'submmit();'" class="btn btn-danger btn-sm">Save</a>
 
 
     </div>
@@ -177,7 +162,12 @@
                         count++;
                         var tempElemet = document.createElement("div");
                         tempElemet.setAttribute("id", "element" + count);
-                        let tempText = "<h4 id='title" + count + "'>List" + count + "</h4><div id='list" + count + "' class='list" + count + "'></div>";
+                        tempElemet.setAttribute("class", "container");
+                        let tempText =
+                            "<h4 id='title" + count + "'>List " + count +
+                            "\n<a onclick='removeElement($(this));'>" +
+                            "<span class='fas fa-trash-alt'></span></a>" +
+                            "</h4><div id='list" + count + "' class='list" + count + "'></div>";
                         tempElemet.innerHTML = tempText;
                         document.getElementById('element' + (count - 1)).before(tempElemet);
                         var myElement = document.getElementById('list' + count);
@@ -218,12 +208,7 @@
     Sortable.create(list1, options);
 </script>
 
-<script>
-    $(function () {
-        console.log(555555);
-    });
-
-</script>
 <script th:src="@{/js/sortable/sortable7.js}"></script>
+
 </body>
 </html>

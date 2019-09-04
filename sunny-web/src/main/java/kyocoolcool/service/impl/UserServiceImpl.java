@@ -1,32 +1,38 @@
 package kyocoolcool.service.impl;
 
-import kyocoolcool.dao.mapper.UserMapper;
-import kyocoolcool.model.User;
-import kyocoolcool.service.IUserService;
+import kyocoolcool.domain.slave.User;
+import kyocoolcool.mapper.slave.UserMapper;
+import kyocoolcool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
- * @ClassName UserServiceImpl
- * @Description TODO
- * @Author Chris Chen
- * @Date 2019-09-03 17:51
- * @Version 1.0
- **/
-
+ * descripiton:
+ *
+ * @author: kinson(2219945910@qq.com)
+ * @date: 2019/1/31
+ * @time: 21:56
+ * @modifier:
+ * @since:
+ */
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserMapper userMapper;
 
-//    @Autowired
-//    private UserMapper userMapper;
-//
     @Override
-    public void save(User user) {
-        // TODO Auto-generated method stub
-//        userMapper.save(user);
+    public List<User> listUser() {
+        return userMapper.selectUserList();
     }
 
-
+    @Override
+    @Transactional(value = "slaveTransactionManager")
+    public void update(User user) {
+        userMapper.update(user);
+        int i = 10 / 0;
+    }
 }

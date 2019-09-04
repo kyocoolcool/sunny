@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2019-08-19 16:39
  * @Version 1.0
  **/
-//@MapperScan("kyocoolcool.dao.mapper")
 @SpringBootApplication
 public class SpringBootSunnyWebApplication {
     public static void main(String[] args) {

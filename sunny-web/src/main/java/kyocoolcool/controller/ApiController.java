@@ -2,9 +2,6 @@ package kyocoolcool.controller;
 
 import cn.hutool.core.util.StrUtil;
 import kyocoolcool.model.Passenger;
-import kyocoolcool.model.User;
-import kyocoolcool.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -18,10 +15,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  **/
 @RestController
 public class ApiController {
-
-    @Autowired
-    private IUserService userService;
-
 
     @GetMapping("/hello")
     public String sayHello(@RequestParam(required = false, name = "who") String who) {
@@ -48,15 +41,9 @@ public class ApiController {
         return StrUtil.format("passengerList: {}", passengerQueue);
     }
 
+    @PostMapping("/test1")
+    public String test1() {
 
-
-    @RequestMapping(value="/save")
-    public String save() {
-        User user = new User();
-        user.setName("xx");
-        user.setEmail("www@baidu.com");
-        user.setPhone("13112312312");
-        userService.save(user);
-        return "success";
+        return "Yes";
     }
 }
